@@ -119,25 +119,26 @@ module "appservice" {
   gtw_ip_address = module.network.public_ip_address
   prod_hostname = var.prod_hostname
   staging_hostname = var.staging_hostname
-  laravel_credentials = {
-    pat: {
-        # github_pat: var.laravel_credentials.pat.github_pat
-    }
-    repo: {
-        laravel_app_repo: var.laravel_credentials.repo.laravel_app_repo
-    }
-    branch: {
-        laravel_app_branch: var.laravel_credentials.branch.laravel_app_branch
-    }
-    db: {
-        # admin_user: var.laravel_credentials.db.admin_user, 
-        # admin_pass: var.laravel_credentials.db.admin_pass
-    },
 
-    env:{
-        # appkey = var.laravel_credentials.env.appkey
-    },
-}
+#   laravel_credentials = {
+#     pat: {
+#         # github_pat: var.laravel_credentials.pat.github_pat
+#     }
+#     repo: {
+#         laravel_app_repo: var.laravel_credentials.repo.laravel_app_repo
+#     }
+#     branch: {
+#         laravel_app_branch: var.laravel_credentials.branch.laravel_app_branch
+#     }
+#     db: {
+#         # admin_user: var.laravel_credentials.db.admin_user, 
+#         # admin_pass: var.laravel_credentials.db.admin_pass
+#     },
+
+#     env:{
+#         # appkey = var.laravel_credentials.env.appkey
+#     },
+# }
   
 }
 module "gateway" {
@@ -157,7 +158,6 @@ module "gateway" {
   prod_hostname = var.prod_hostname
   staging_hostname = var.staging_hostname
   ssl_certificate_name = var.ssl_certificate_name
-  # ssl_pfx_password = "gradestar123"
 }
 module "db" {
   source = "./modules/db"
